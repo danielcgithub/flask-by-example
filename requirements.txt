@@ -1,0 +1,15 @@
+click==6.7
+Django==1.11.5
+Flask==0.10.1
+itsdangerous==0.24
+Jinja2==2.9.6
+MarkupSafe==1.0
+olefile==0.44
+Pillow==4.3.0
+pyparsing==2.2.0
+pytz==2017.2
+svgwrite==1.1.11
+Tree==0.2.3
+virtualenv==15.1.0
+virtualenvwrapper-win==1.2.1
+Werkzeug==0.12.2

@@ -10,6 +10,9 @@
       }
 
 
+
+
+
     </style>
 </head>
 <body ng-controller="WordcountController">
@@ -23,28 +26,44 @@
                     <input type="text" name="url" class="form-control" id="url-box" placeholder="Enter URL..."
                            style="max-width: 300px;" ng-model="url" required>
                 </div>
-                <button type="submit" class="btn btn-default">Submit</button>
-            </form>
-        </div>
-        <div id="results">
-            <table class="table table-striped">
-                <thead>
-                <tr>
-                    <th>Word</th>
-                    <th>Count</th>
-                </tr>
-                </thead>
-                <tbody>
                 {% raw %}
-                <tr ng-repeat="(key, val) in wordcounts">
-
-                    <td>{{key}}</td>
-                    <td>{{val}}</td>
-
-                </tr>
+                <button type="submit" class="btn btn-primary"
+                        ng-disabled="loading">{{ submitButtonText }}
+                </button>
                 {% endraw %}
-                </tbody>
-            </table>
+            </form>
+            <div class="alert alert-danger" role="alert" ng-show='urlerror'>
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                <span class="sr-only">Error:</span>
+                <span>There was an error submitting your URL.<br>
+  Please check to make sure it is valid before trying again.</span>
+            </div>
+        </div>
+        <div class="col-sm-5 col-sm-offset-1">
+            <h2>Frequencies</h2>
+            <br>
+            <div id="results">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Word</th>
+                        <th>Count</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% raw %}
+                    <tr ng-repeat="(key, val) in wordcounts">
+
+                        <td>{{key}}</td>
+                        <td>{{val}}</td>
+
+                    </tr>
+                    {% endraw %}
+                    </tbody>
+                </table>
+            </div>
+            <img class="col-sm-3 col-sm-offset-4" src="{{ url_for('static',
+  filename='spinner.gif') }}" ng-show="loading">
         </div>
     </div>
 </div>

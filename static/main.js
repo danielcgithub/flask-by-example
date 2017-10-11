@@ -11,6 +11,7 @@
                 $scope.loading = false;
                 $scope.urlerror = false;
 
+
                 $scope.getResults = function() {
 
                     $log.log('test');

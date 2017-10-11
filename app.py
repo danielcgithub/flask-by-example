@@ -1,4 +1,5 @@
 import json
+import operator
 import os
 import re
 from collections import Counter
@@ -8,9 +9,9 @@ import requests
 from bs4 import BeautifulSoup
 from flask.ext.sqlalchemy import SQLAlchemy
 from rq import Queue
+from rq.job import Job
 
-from flask import Flask, render_template, request
-from flask import jsonify
+from flask import Flask, render_template, request, jsonify
 from stop_words import stops
 from worker import conn
 
@@ -36,7 +37,7 @@ def count_and_save_words(url):
         return {"error": errors}
 
     # text processing
-    raw = BeautifulSoup(r.text).get_text()
+    raw = BeautifulSoup(r.text, 'html.parser').get_text()
     nltk.data.path.append('./nltk_data/')  # set the path
     tokens = nltk.word_tokenize(raw)
     text = nltk.Text(tokens)

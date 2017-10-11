@@ -11,9 +11,16 @@ This is the repo for the Real Python blog series, Flask by Example -
 1. [Part Five](https://realpython.com/blog/python/flask-by-example-integrating-flask-and-angularjs/): Set up Angular on the front-end to continuously poll the back-end to see if the request is done processing.
 1. [Part Six](https://realpython.com/blog/python/updating-the-staging-environment/): Push to the staging server on Heroku - setting up Redis and detailing how to run two processes (web and worker) on a single Dyno.
 1. [Part Seven](https://realpython.com/blog/python/flask-by-example-updating-the-ui/): Update the front-end to make it more user-friendly.
-1. Part Eight: Add the D3 library into the mix to graph a frequency distribution and histogram.
+1. [Part Eight](https://realpython.com/blog/python/flask-by-example-custom-angular-directive-with-D3/): Add the D3 library into the mix to graph a frequency distribution and histogram.
 
 Check out http://realpython.com
+
+
+Check out:
+1. https://wordcount-pro-dc.herokuapp.com/
+1. https://wordcount-stage-dc.herokuapp.com/
+
+
 
 ## Quick Start
 
